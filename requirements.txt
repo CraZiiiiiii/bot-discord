@@ -2,6 +2,7 @@ discord
 gspread
 oauth2client
 dotenv
-nest_asyncio
+nest-asyncio
 asyncio
+
 
