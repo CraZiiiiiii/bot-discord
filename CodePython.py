@@ -23,7 +23,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    print("Bot connecté")
+    print("Bot started successfully !")
 
 @bot.command()
 async def prix(ctx, *, nom_annee: str):
@@ -97,4 +97,5 @@ async def main():
     await bot.start(DISCORD_TOKEN)
 
 asyncio.run(main())
+
 
