@@ -9,10 +9,12 @@ import asyncio
 
 load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")  # Le token doit être défini dans le fichier .env
+json_creds = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 
 # Connexion à Google Sheets
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("clebottest.json", scope)
+creds_dict = json.loads(json_creds)
+creds = ServiceAccountCredentials.from_json_keyfile_name(creds_dict, scope)
 client = gspread.authorize(creds)
 sheet = client.open_by_key("1yOJ-WJdRXEKoN5uetyN5wy2bEYRH6jY6GJLQtUgSzJE").sheet1
 
@@ -97,6 +99,7 @@ async def main():
     await bot.start(DISCORD_TOKEN)
 
 asyncio.run(main())
+
 
 
 
