@@ -8,3 +8,5 @@ services:
     environment:
       # Force Python à afficher les logs en temps réel
       - PYTHONUNBUFFERED=1
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - GOOGLE_SHEETS_CREDENTIALS=${GOOGLE_SHEETS_CREDENTIALS}
