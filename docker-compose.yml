@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  discord-bot:
+    build: .
+    container_name: mon_bot_discord
+    restart: unless-stopped
+    volumes:
+      # Montage des fichiers secrets (requis car ils sont dans le .gitignore)
+      - ./.env:/app/.env
+      - ./clebottest.json:/app/clebottest.json
+    environment:
+      # Force Python à afficher les logs en temps réel
+      - PYTHONUNBUFFERED=1
