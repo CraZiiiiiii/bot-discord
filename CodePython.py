@@ -12,6 +12,8 @@ load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")  # Le token doit être défini dans le fichier .env
 json_creds = os.getenv("GOOGLE_SHEETS_CREDENTIALS")
 
+print(json_creds)
+
 # Connexion à Google Sheets
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 creds_dict = json.loads(json_creds)
@@ -100,6 +102,7 @@ async def main():
     await bot.start(DISCORD_TOKEN)
 
 asyncio.run(main())
+
 
 
 
