@@ -1,8 +1,5 @@
-discord
+discord.py
 gspread
 oauth2client
-dotenv
+python-dotenv
 nest-asyncio
-asyncio
-
-
