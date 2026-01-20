@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os
 import nest_asyncio
 import asyncio
+import json
 
 load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")  # Le token doit être défini dans le fichier .env
@@ -99,6 +100,7 @@ async def main():
     await bot.start(DISCORD_TOKEN)
 
 asyncio.run(main())
+
 
 
 
